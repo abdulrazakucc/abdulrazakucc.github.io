@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Practice areas, Dr. Abdul Razak</title>
+  <meta name="description" content="Four practice areas at the intersection of probabilistic AI research and production machine learning, from generative AI for network diagnostics to multi-objective decision making." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23111827'/%3E%3Ctext x='50' y='62' text-anchor='middle' font-family='Inter,sans-serif' font-size='44' font-weight='700' fill='%23f8fafc'%3EAR%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Home">
+      <span class="brand-mark" aria-hidden="true">AR</span>
+      <span class="brand-text">Dr. Abdul Razak</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="./">Home</a>
+      <a href="about.html">About</a>
+      <a href="work.html" aria-current="page">Practice</a>
+      <a href="research.html">Research</a>
+      <a href="patents.html">Patents</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle color theme">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="page-hero-inner">
+        <p class="eyebrow">Practice</p>
+        <h1>Four practice areas, one underlying craft.</h1>
+        <p class="lede">
+          Instead of a list of roles, this is a portrait of the work itself. Each section below describes
+          a practice area in which I have done sustained, deep work over many years, the kinds of
+          problems it lets me solve, and the tools I reach for when solving them.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="practice" id="genai-operations">
+        <aside class="practice-side">
+          <span class="practice-num">Practice 01</span>
+          <h3>Generative AI for Network Operations</h3>
+          <span class="practice-tag">Current focus</span>
+        </aside>
+        <div class="practice-body">
+          <p>
+            Enterprise wireless networks generate a constant stream of telemetry that is, on its own,
+            very hard to act on. A typical deployment runs across thousands of access points and
+            switches, each producing measurements about radio conditions, client behaviour, roaming
+            events, throughput, latency and a long tail of device-health indicators. When something
+            goes wrong, the question is rarely <em>what changed</em>, but <em>which of the many things
+            that changed actually matters</em>, and that requires reasoning across modalities, time
+            horizons and levels of abstraction.
+          </p>
+
+          <p>
+            The systems I build in this area combine large language model reasoning with classical
+            statistical signal processing and a knowledge graph of the network domain. The language
+            model is never asked to interpret raw telemetry by itself. Instead, the architecture is
+            arranged so that statistical models identify anomalies, the knowledge graph supplies
+            structure (devices, sites, topology, configuration), and the language model is used for
+            the parts of the problem that language models are genuinely good at, namely synthesising
+            context, generating hypotheses and explaining findings in a way a human operator can act on.
+          </p>
+
+          <p>
+            The work has produced <strong>autonomous agent workflows</strong> that monitor networks
+            continuously and propose remediation plans, <strong>multi-modal correlation</strong> across
+            telemetry, device-health indicators and client performance data, and
+            <strong>network-aware inference pipelines</strong> that evaluate anomalies over time to
+            reduce false alerts. In production these tools have collapsed wireless-issue investigation
+            times from hours to seconds and have given product and engineering teams a richer surface
+            on which to act.
+          </p>
+
+          <p>
+            What makes this work distinctive is the discipline around grounding. A generative model
+            that hallucinates is not a quirk to be tolerated, it is a defect to be designed out. I
+            treat retrieval, structured reasoning, and probabilistic evaluation as first-class members
+            of the system, alongside the language model itself.
+          </p>
+
+          <div class="practice-pillset" aria-label="Tools and platforms">
+            <span>Large language model reasoning</span>
+            <span>Multi-modal AI</span>
+            <span>Autonomous agents</span>
+            <span>Knowledge graphs</span>
+            <span>PyMC3</span>
+            <span>PySpark</span>
+            <span>PyFlink</span>
+            <span>AWS SageMaker</span>
+            <span>AWS Athena</span>
+            <span>Azure</span>
+          </div>
+          <p class="practice-foot">Applied principally at Extreme Networks (2020 to present).</p>
+        </div>
+      </article>
+
+      <article class="practice" id="probabilistic-modelling">
+        <aside class="practice-side">
+          <span class="practice-num">Practice 02</span>
+          <h3>Probabilistic Modelling for Industrial Decisions</h3>
+          <span class="practice-tag">Foundation</span>
+        </aside>
+        <div class="practice-body">
+          <p>
+            Most industrial decision problems are problems of incomplete information. Sensors fail.
+            Labels are noisy or absent. The distribution shifts between training time and deployment.
+            In these settings the right object to model is not a point prediction but a distribution
+            over possible answers, with calibrated uncertainty, and an explicit account of the
+            assumptions baked into the model.
+          </p>
+
+          <p>
+            I have spent a decade building probabilistic models for problems of this kind, using
+            <strong>PyMC3</strong> for Bayesian inference in production, <strong>BLOG</strong>
+            (Bayesian Logic) for relational probabilistic programming in security and access-control
+            settings, and <strong>Swift</strong> for the more academic probabilistic graphical work I
+            did during my post-doctoral years. The applications have ranged from
+            <strong>Pareto-optimal alarm classification</strong> in commercial intrusion-detection
+            systems, to <strong>root-cause analysis</strong> of event occurrences across distributed
+            sites, to inferring the latent state of wireless clients from the partial observations
+            available to a controller.
+          </p>
+
+          <p>
+            The thread across all of it is the same: when you model uncertainty explicitly, you can
+            make decisions that are robust to that uncertainty. The system stops being surprised by
+            its own confidence. Calibration becomes a property you measure rather than a property you
+            hope for. And the conversation with product owners shifts from <em>can we trust this
+            prediction</em> to <em>what are we going to do given the prediction, and how much risk
+            does that imply</em>.
+          </p>
+
+          <div class="practice-pillset" aria-label="Tools and platforms">
+            <span>PyMC3</span>
+            <span>BLOG</span>
+            <span>Swift PPL</span>
+            <span>Probabilistic graphical models</span>
+            <span>Influence diagrams</span>
+            <span>Bayesian inference</span>
+            <span>Clustering</span>
+            <span>Regression analysis</span>
+            <span>Pareto optimisation</span>
+          </div>
+          <p class="practice-foot">Applied at Extreme Networks, Johnson Controls and the Insight Centre for Data Analytics.</p>
+        </div>
+      </article>
+
+      <article class="practice" id="multi-objective">
+        <aside class="practice-side">
+          <span class="practice-num">Practice 03</span>
+          <h3>Multi-Objective Optimisation and Preference Learning</h3>
+          <span class="practice-tag">Research line</span>
+        </aside>
+        <div class="practice-body">
+          <p>
+            Most decisions worth making involve several criteria that pull in different directions.
+            Faster, but how much should we sacrifice in cost? More reliable, but at what loss of
+            throughput? A perfectly calibrated model that gives one number cannot answer these
+            questions. What is needed instead is an explicit account of the
+            <strong>trade-off structure</strong>, a way to <strong>elicit preferences</strong> from
+            the people who will live with the decision, and a class of algorithms that produce
+            solutions which respect those preferences without committing to a single weighting in
+            advance.
+          </p>
+
+          <p>
+            This was the subject of my doctorate at University College Cork and the body of work I
+            produced during my post-doctoral fellowship at the Insight Centre. The research line
+            culminated in publications at <strong>AAAI, IJCAI, UAI, CP and ICTAI</strong> on
+            multi-objective influence diagrams with possibly optimal policies, lexicographic and
+            weighted-average preference inference, and multi-objective constraint optimisation with
+            trade-offs, in collaboration with IBM Research Labs Dublin.
+          </p>
+
+          <p>
+            In industry, the same ideas appear under different names. When a wireless customer asks
+            for a network that is reliable for their critical clients while being inexpensive to
+            operate, that is a multi-objective decision problem. When a product team has to weigh
+            connectivity reliability, roaming success, throughput stability and latency in a single
+            recommendation, that is preference inference. The algorithms I developed for academic
+            benchmarks transfer, with care, into the techniques I use today to personalise networking
+            solutions and to evaluate client-experience metrics in a principled way.
+          </p>
+
+          <div class="practice-pillset" aria-label="Tools and platforms">
+            <span>Multi-objective optimisation</span>
+            <span>Preference elicitation</span>
+            <span>Constraint programming</span>
+            <span>Influence diagrams</span>
+            <span>ILOG CPLEX</span>
+            <span>LPSOLVE</span>
+            <span>C++ (STL, Boost, Eigen)</span>
+          </div>
+          <p class="practice-foot">Developed at University College Cork, applied at Extreme Networks.</p>
+        </div>
+      </article>
+
+      <article class="practice" id="production-engineering">
+        <aside class="practice-side">
+          <span class="practice-num">Practice 04</span>
+          <h3>Research to Production Engineering</h3>
+          <span class="practice-tag">The connecting craft</span>
+        </aside>
+        <div class="practice-body">
+          <p>
+            Many of the failures I have seen in applied AI are not failures of model quality but
+            failures of translation between research code and production systems. A prototype that
+            assumes a clean batch of data, a single GPU and unlimited iteration time will not survive
+            contact with a streaming pipeline, a multi-tenant deployment and a service-level
+            objective. Bridging that gap is its own craft, and it is the craft I most enjoy.
+          </p>
+
+          <p>
+            In practice, this means I write the same model twice, once in the language and shape of
+            research and once in the language and shape of production. I work directly with the
+            engineering and product teams that will own the system, so that the constraints they care
+            about (latency, cost, failure modes, observability, retraining cadence) become inputs to
+            the model design rather than afterthoughts. I prefer pipelines that I can reason about
+            end to end, and I am sceptical of architectures whose correctness depends on assumptions
+            that nobody on the team can explain in their own words.
+          </p>
+
+          <p>
+            The result, over many projects, is a set of next-generation real-time AI and machine
+            learning pipelines that ship, scale and stay correct. The same care that I once applied
+            to convergence proofs in my dissertation, I now apply to backpressure and idempotency in
+            streaming jobs. The intellectual habits transfer, and the production work is the better
+            for it.
+          </p>
+
+          <div class="practice-pillset" aria-label="Tools and platforms">
+            <span>Python</span>
+            <span>PySpark</span>
+            <span>PyFlink</span>
+            <span>SQL</span>
+            <span>AWS Athena</span>
+            <span>AWS SageMaker</span>
+            <span>Azure Databricks</span>
+            <span>Real-time pipelines</span>
+            <span>Streaming inference</span>
+          </div>
+          <p class="practice-foot">Applied across every industrial role since 2017.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="section">
+      <header class="section-head">
+        <p class="section-eyebrow">Where this has been done</p>
+        <h2>The organisations behind the work.</h2>
+        <p class="section-sub">
+          The practice areas above are not isolated to one job. They are threads I have woven through
+          every role I have held, and the organisations below are the places I have done that weaving.
+        </p>
+      </header>
+
+      <div class="prose">
+        <p>
+          At <strong>Extreme Networks</strong> (since 2020, currently in the United States and
+          previously in Cork) I have been responsible for the data-science strategy around generative
+          AI for network diagnostics, multi-modal correlation of telemetry and client performance,
+          and the personalisation of networking solutions to customer preferences. The work
+          contributes to the next-generation real-time AI and machine-learning pipelines that
+          underpin the company's enterprise networking platform.
+        </p>
+
+        <p>
+          At <strong>Johnson Controls</strong> (2017 to 2020, in Cork) I led machine-learning work
+          across the intrusion-alarm, access-control and retail-analytics product lines. The eight
+          US patents I co-invented during that period sit on top of probabilistic and rule-based
+          models for alarm classification, security-system signature generation and event analysis.
+        </p>
+
+        <p>
+          At the <strong>Insight Centre for Data Analytics</strong> (2014 to 2017, in Cork) I held a
+          Science Foundation Ireland Post-Doctoral Fellowship as part of a United Technology Research
+          Centre machine-learning programme, with partial collaboration with IBM Research Labs Dublin.
+          The work focused on probabilistic graphical models, clustering and decision making under
+          uncertainty.
+        </p>
+
+        <p>
+          At <strong>University College Cork</strong> (2010 to 2014) my doctoral research was funded
+          by the IRCSET / IBM Enterprise Partnership Scheme and was part of one of three main streams
+          of IBM's Risk Management Colloboratory project. I developed exact and approximate
+          algorithms for multi-objective decision making under preference uncertainty, which became
+          the research line that still informs my industrial work today.
+        </p>
+
+        <p>
+          Before all of that, I was a <strong>lecturer in mathematics at Osmania University</strong>
+          in Hyderabad (2005 to 2010), teaching abstract and linear algebra, real and numerical
+          analysis, differential and vector calculus, probability and statistics, and co-ordinate
+          geometry to undergraduate students.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <header class="section-head">
+        <p class="section-eyebrow">Continue</p>
+        <h2>Related material on the site.</h2>
+      </header>
+      <div class="navcards">
+        <a class="navcard" href="research.html">
+          <p class="navcard-eyebrow">Research</p>
+          <h3>Publications and academic service</h3>
+          <p>The peer-reviewed research at AAAI, IJCAI, UAI, CP and ICTAI that underpins these practice areas.</p>
+          <span class="btn-arrow">Read the research</span>
+        </a>
+        <a class="navcard" href="patents.html">
+          <p class="navcard-eyebrow">Patents</p>
+          <h3>Nine granted US patents</h3>
+          <p>The inventions that have come out of the industrial work, grouped by theme.</p>
+          <span class="btn-arrow">View patents</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <p>&copy; <span id="year"></span> Dr. Abdul Razak. All rights reserved.</p>
+      <nav class="foot-nav" aria-label="Site sections">
+        <a href="./">Home</a>
+        <a href="about.html">About</a>
+        <a href="research.html">Research</a>
+        <a href="patents.html">Patents</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
