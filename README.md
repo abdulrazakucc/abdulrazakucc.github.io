@@ -1,6 +1,6 @@
 # abdulrazakucc.github.io
 
-Personal portfolio of **Dr. Abdul Razak**, Senior Data Scientist in AI and Machine Learning Research.
+Personal portfolio of **Dr. Abdul Razak**, Staff Data Scientist in AI and Machine Learning Research.
 
 Live site: <https://abdulrazakucc.github.io/>
 
