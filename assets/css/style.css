@@ -289,16 +289,16 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 
 .hero-portrait {
   width: 100%;
-  max-width: 340px;
-  aspect-ratio: 1 / 1;
+  max-width: 400px;
+  aspect-ratio: 5 / 4;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 20%;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
 }
 @media (max-width: 880px) {
-  .hero-portrait { max-width: 300px; }
+  .hero-portrait { max-width: 360px; }
 }
 
 .hero-stats {
@@ -330,6 +330,23 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
   font-size: 12.5px;
   color: var(--ink-mute);
   letter-spacing: 0.02em;
+}
+
+.stat-ieee {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 10px;
+  background: var(--accent-soft);
+  border: 1px solid color-mix(in oklab, var(--accent) 32%, transparent);
+}
+.stat-ieee .stat-num {
+  font-size: 1.4rem;
+  color: var(--accent);
+}
+.stat-ieee .stat-label {
+  color: color-mix(in oklab, var(--accent) 78%, var(--ink));
+  font-weight: 500;
 }
 
 /* ---------- Inner-page hero (used on every page except Home) ---------- */
@@ -506,9 +523,9 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 .profile-photo {
   display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 5 / 4;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 20%;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
