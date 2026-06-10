@@ -288,17 +288,12 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 }
 
 .hero-portrait {
+  display: block;
   width: 100%;
-  max-width: 400px;
-  aspect-ratio: 5 / 4;
-  object-fit: cover;
-  object-position: center 20%;
+  height: auto;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
-}
-@media (max-width: 880px) {
-  .hero-portrait { max-width: 360px; }
 }
 
 .hero-stats {
@@ -523,9 +518,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 .profile-photo {
   display: block;
   width: 100%;
-  aspect-ratio: 5 / 4;
-  object-fit: cover;
-  object-position: center 20%;
+  height: auto;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
