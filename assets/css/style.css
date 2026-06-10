@@ -60,6 +60,19 @@ a {
 }
 a:hover { color: var(--accent-deep); text-decoration: underline; }
 
+/* Conference name links that blend into prose and headings */
+.conf-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted color-mix(in oklab, currentColor 45%, transparent);
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.conf-link:hover {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom-color: currentColor;
+}
+
 .skip-link {
   position: absolute; top: -100px; left: 16px;
   background: var(--ink); color: var(--bg);
@@ -267,6 +280,23 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
   border-radius: 6px;
 }
 .quicklinks a:hover { color: var(--accent); background: var(--bg-soft); text-decoration: none; }
+
+.hero-aside {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 22px);
+}
+
+.hero-portrait {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+}
+@media (max-width: 880px) {
+  .hero-portrait { max-width: 420px; }
+}
 
 .hero-stats {
   display: grid;
