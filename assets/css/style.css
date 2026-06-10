@@ -289,13 +289,16 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 
 .hero-portrait {
   width: 100%;
-  height: auto;
+  max-width: 360px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 22%;
   border-radius: var(--radius-lg);
   border: 1px solid var(--line);
   box-shadow: var(--shadow-lg);
 }
 @media (max-width: 880px) {
-  .hero-portrait { max-width: 420px; }
+  .hero-portrait { max-width: 320px; }
 }
 
 .hero-stats {
@@ -503,7 +506,9 @@ html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
 .profile-photo {
   display: block;
   width: 100%;
-  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 22%;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
