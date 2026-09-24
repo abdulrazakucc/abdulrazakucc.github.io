@@ -1,260 +1,267 @@
 % ---------------------------------------------------------------
-%  Curriculum vitae — Abdul Razak
+%  Curriculum vitae, Abdul Razak
 %  Engine: tectonic (XeTeX).  Build:  tectonic -X compile cv.tex
 % ---------------------------------------------------------------
 \documentclass[9pt,letterpaper]{extarticle}
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{newpxtext}                 % Palatino-style text face
+\usepackage{newpxtext}                  % Palatino-style text face
 \usepackage{microtype}
 \usepackage[
-  top=0.62in, bottom=0.58in, left=0.74in, right=0.74in,
+  top=0.52in, bottom=0.56in, left=0.72in, right=0.72in,
   footskip=0.26in
 ]{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{xcolor}
 \usepackage{fancyhdr}
+\usepackage{tcolorbox}
+\usepackage{lastpage}
 \usepackage[hidelinks]{hyperref}
 
-\definecolor{ink}{HTML}{111820}
-\definecolor{accent}{HTML}{143352}
-\definecolor{soft}{HTML}{6B7684}
-\definecolor{rule}{HTML}{C9D0DA}
+% ---- palette ---------------------------------------------------------
+\definecolor{paper}{HTML}{FAF8F4}       % warm ivory page
+\definecolor{band}{HTML}{15304E}        % deep navy masthead
+\definecolor{ink}{HTML}{141A21}
+\definecolor{accent}{HTML}{1D4E79}
+\definecolor{soft}{HTML}{5F6B78}
+\definecolor{rule}{HTML}{D7D1C6}
+\definecolor{linklight}{HTML}{BFD7F0}
+\definecolor{panel}{HTML}{F2EEE6}       % tint behind the interests panel
+
+\pagecolor{paper}
+\color{ink}
+\setlength{\parindent}{0pt}
+\linespread{1.04}
 
 \hypersetup{
-  colorlinks=true,
-  urlcolor=accent,
-  linkcolor=accent,
-  pdftitle={Abdul Razak --- Curriculum Vitae},
+  colorlinks=true, urlcolor=accent, linkcolor=accent,
+  pdftitle={Abdul Razak, Curriculum Vitae},
   pdfauthor={Abdul Razak},
   pdfsubject={Curriculum Vitae},
   pdfkeywords={artificial intelligence, multi-objective decision making,
                probabilistic graphical models, generative AI}
 }
-
-\color{ink}
-\setlength{\parindent}{0pt}
-\linespread{1.03}
+\newcommand{\lnk}[2]{\href{#1}{\textcolor{linklight}{#2}}}
 
 % ---- section headings ------------------------------------------------
 \titleformat{\section}
-  {\normalfont\footnotesize\bfseries\scshape\color{accent}}
-  {}{0pt}{\MakeUppercase}[{\color{rule}\titlerule[0.5pt]}]
-\titlespacing*{\section}{0pt}{7.5pt plus 2pt minus 2pt}{3.5pt}
+  {\normalfont\small\bfseries\scshape\color{accent}}
+  {}{0pt}{}[{\color{rule}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{6pt plus 2pt minus 1pt}{3.2pt}
 
-% ---- date-gutter list ------------------------------------------------
-\newlength{\gutter}\setlength{\gutter}{0.92in}
-\newenvironment{dated}[1][5pt]
+% ---- dated entries ---------------------------------------------------
+\newlength{\gutter}\setlength{\gutter}{0.78in}
+\newenvironment{dated}[1][4pt]
   {\begin{list}{}{%
       \setlength{\labelwidth}{\gutter}
-      \setlength{\labelsep}{0.18in}
-      \setlength{\leftmargin}{\dimexpr\gutter+0.18in\relax}
+      \setlength{\labelsep}{0.16in}
+      \setlength{\leftmargin}{\dimexpr\gutter+0.16in\relax}
       \setlength{\itemsep}{#1}
       \setlength{\parsep}{0pt}
       \setlength{\topsep}{3pt}
-      \renewcommand{\makelabel}[1]{\raggedright\footnotesize\color{soft}##1\hfill}}}
+      \renewcommand{\makelabel}[1]{\raggedright\small\color{soft}##1\hfill}}}
   {\end{list}}
 
-\newcommand{\role}[2]{{\normalsize\bfseries #1}\\[1pt]{\color{accent}#2}}
-\newcommand{\degree}[2]{{\normalsize\bfseries #1}\\[1pt]{\color{accent}#2}}
+\newcommand{\role}[2]{{\normalsize\bfseries #1}\\[1.5pt]{\color{accent}#2}}
 
 \newenvironment{duties}
-  {\begin{itemize}[leftmargin=11pt, topsep=2pt, itemsep=1.2pt,
-                   parsep=0pt, label={\color{rule}\rule[2.2pt]{4pt}{0.5pt}}]}
+  {\begin{itemize}[leftmargin=11pt, topsep=2.2pt, itemsep=1.3pt,
+                   parsep=0pt, label={\color{accent}\rule[2.2pt]{4pt}{0.6pt}}]}
   {\end{itemize}}
 
-% ---- reference lists (publications, patents) -------------------------
+% ---- reference lists -------------------------------------------------
 \newenvironment{refs}
   {\begin{list}{}{%
       \setlength{\labelwidth}{0.34in}
-      \setlength{\labelsep}{0.10in}
-      \setlength{\leftmargin}{0.44in}
-      \setlength{\itemsep}{2.8pt}
+      \setlength{\labelsep}{0.16in}
+      \setlength{\leftmargin}{0.50in}
+      \setlength{\itemsep}{3.2pt}
       \setlength{\parsep}{0pt}
       \setlength{\topsep}{3pt}
-      \renewcommand{\makelabel}[1]{\footnotesize\color{accent}##1\hfill}}}
+      \renewcommand{\makelabel}[1]{\small\color{soft}##1\hfill}}}
   {\end{list}}
 
 \newcommand{\me}{\textbf{A.\,Razak}}
 \newcommand{\venue}[1]{\textit{\color{soft}#1}}
-\newcommand{\group}[1]{\smallskip{\footnotesize\scshape\color{soft}#1}\par\smallskip}
+\newcommand{\group}[1]{\smallskip{\small\bfseries\color{ink}#1}\par\vspace{1pt}}
 
 \newenvironment{plainlist}
-  {\begin{itemize}[leftmargin=11pt, topsep=2pt, itemsep=2.2pt, parsep=0pt,
+  {\begin{itemize}[leftmargin=11pt, topsep=2pt, itemsep=2.4pt, parsep=0pt,
                    label={\color{accent}\rule[1.6pt]{2.6pt}{2.6pt}}]}
   {\end{itemize}}
 
-% ---- running footer --------------------------------------------------
+% ---- footer ----------------------------------------------------------
 \pagestyle{fancy}
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0.4pt}
 \renewcommand{\footrule}{\hbox to\headwidth{\color{rule}\leaders\hrule height \footrulewidth\hfill}}
-\fancyfoot[L]{\footnotesize\color{soft}Abdul Razak}
+\fancyfoot[L]{\footnotesize\color{soft}Abdul Razak, PhD}
 \fancyfoot[R]{\footnotesize\color{soft}%
-  Detailed project notes: \href{https://abdulrazakucc.github.io/}{online portfolio}%
-  \quad\textbar\quad Page \thepage\ of 2}
+  Project notes and full record: \href{https://abdulrazakucc.github.io/}{online portfolio}%
+  \quad\textbar\quad Page \thepage\ of \pageref{LastPage}}
 
 \begin{document}
 
-% ======================= masthead =====================================
-\begin{center}
-  {\fontsize{22}{24}\selectfont\scshape Abdul Razak}\\[4pt]
-  {\normalsize\itshape Staff Data Scientist, Extreme Networks}\\[7pt]
-  {\color{rule}\rule{\textwidth}{0.6pt}}\\[5pt]
-  {\footnotesize
-   Salem, United States \quad\textbar\quad
-   \href{https://abdulrazakucc.github.io/}{Portfolio} \quad\textbar\quad
-   \href{https://scholar.google.com/citations?user=NeuA3uAAAAAJ\&hl=en}{Google Scholar} \quad\textbar\quad
-   \href{https://dblp.org/pid/120/1333.html}{DBLP} \quad\textbar\quad
-   \href{https://orcid.org/0009-0004-6819-147X}{ORCID} \quad\textbar\quad
-   \href{https://patents.justia.com/inventor/abdul-razak}{Patents} \quad\textbar\quad
-   \href{https://www.linkedin.com/in/data-analytics/}{LinkedIn}}
-\end{center}
-\vspace{2pt}
+% ======================= masthead band ================================
+\begin{tcolorbox}[
+  colback=band, colframe=band, boxrule=0pt, arc=3pt,
+  left=14pt, right=14pt, top=7pt, bottom=6pt, halign=center]
+  {\color{white}\fontsize{21}{23}\selectfont\scshape Abdul Razak}\\[3pt]
+  {\color{linklight}\normalsize\itshape Staff Data Scientist, Extreme Networks}\\[5pt]
+  {\color{white!45!band}\rule{0.94\linewidth}{0.5pt}}\\[5pt]
+  {\small\color{white}
+   Scottsdale, Arizona \quad\textbar\quad
+   +1 408 859 3570 \quad\textbar\quad
+   \lnk{mailto:razakmcs@gmail.com}{razakmcs@gmail.com}}\\[3pt]
+  {\small\color{white}
+   \lnk{https://abdulrazakucc.github.io/}{Portfolio} \quad\textbar\quad
+   \lnk{https://scholar.google.com/citations?user=NeuA3uAAAAAJ\&hl=en}{Google Scholar} \quad\textbar\quad
+   \lnk{https://dblp.org/pid/120/1333.html}{DBLP} \quad\textbar\quad
+   \lnk{https://orcid.org/0009-0004-6819-147X}{ORCID} \quad\textbar\quad
+   \lnk{https://patents.justia.com/inventor/abdul-razak}{Patents} \quad\textbar\quad
+   \lnk{https://www.linkedin.com/in/data-analytics/}{LinkedIn}}
+\end{tcolorbox}
 
 % ======================= research =====================================
-\section{Research}
+\section{Research Summary}
 
 My work concerns decision making when objectives conflict and preferences are known only in part.
 During my doctorate and post-doctoral fellowship I developed exact and approximate algorithms for
-multi-objective constraint optimisation and influence diagrams, and methods that elicit only as much
-preference information as a decision actually requires; this appeared at AAAI, IJCAI, UAI, CP and
-ICTAI, largely with colleagues at IBM Research Dublin. In industry I have applied the same
-probabilistic and decision-theoretic tools to building security, where the work produced eight
-granted patents, and since 2020 to enterprise wireless networks, where I lead the data-science work
-on generative models for network diagnosis.
+multi-objective constraint optimisation and influence diagrams, with methods that elicit only as
+much preference information as a decision requires. That work appeared at AAAI, IJCAI, UAI, CP and
+ICTAI, largely with colleagues at IBM Research Dublin. In industry I applied the same tools to
+building security, where the work produced eight granted patents, and since 2020 to enterprise
+wireless networks, where I lead the data-science work on generative models for network diagnosis.
 
-\smallskip
-{\footnotesize\textsc{\color{soft}Interests}}\; Multi-objective decision making under uncertainty;
-preference elicitation and inference; probabilistic graphical models and influence diagrams;
-grounded and retrieval-augmented generation; constraint optimisation; machine learning for
-networked systems.
+\vspace{4pt}
+\begin{tcolorbox}[colback=panel, colframe=rule, boxrule=0.4pt, arc=2pt,
+                  left=9pt, right=9pt, top=5pt, bottom=5pt]
+  {\small\bfseries\color{accent}Research interests.}\;
+  Multi-objective decision making under uncertainty; preference elicitation and inference;
+  probabilistic graphical models; grounded and retrieval-augmented generation; machine learning
+  for networked systems.
+\end{tcolorbox}
 
 % ======================= education ====================================
 \section{Education}
 \begin{dated}
   \item[2010--2014]
-    \degree{PhD, Computer Science (Artificial Intelligence)}
-           {National University of Ireland, Cork --- Cork Constraint Computation Centre}\\[1.5pt]
+    \role{PhD, Computer Science (Artificial Intelligence)}
+         {National University of Ireland, Cork. Cork Constraint Computation Centre}\\[1.5pt]
     Thesis: \textit{Reasoning with Imprecise Trade-offs in Decision Making under Certainty and
-    Uncertainty}. Supervised by Nic Wilson. Funded by the IRCSET\,/\,IBM Enterprise Partnership
-    Scheme as part of IBM's Risk Management Colloboratory.
+    Uncertainty}, supervised by Nic Wilson. Funded by the IRCSET\,/\,IBM Enterprise Partnership Scheme.
   \item[2003--2005]
-    \degree{MSc, Mathematics with Computer Science}{Osmania University, Hyderabad, India}\\[1.5pt]
+    \role{MSc, Mathematics with Computer Science}{Osmania University, Hyderabad, India}\\[1.5pt]
     Awarded the university merit scholarship.
   \item[2000--2003]
-    \degree{BSc, Mathematics, Statistics and Computer Science}{Osmania University, Hyderabad, India}
+    \role{BSc, Mathematics, Statistics and Computer Science}{Osmania University, Hyderabad, India}
 \end{dated}
 
 % ======================= appointments =================================
-\section{Appointments}
+\section{Professional Appointments}
 \begin{dated}
-  \item[2020--present]
-    \role{Staff Data Scientist}{Extreme Networks --- Salem, United States; previously Cork, Ireland}
+  \item[Since 2020]
+    \role{Staff Data Scientist}{Extreme Networks. Scottsdale, Arizona; previously Cork, Ireland}
     \begin{duties}
       \item Lead the data-science work on generative models for network diagnosis. Language models
-            are used for hypothesis generation and explanation; anomaly detection, a knowledge graph
-            of the deployment and live telemetry supply the evidence they reason over.
+            generate and explain hypotheses; anomaly detection, a knowledge graph and live telemetry
+            supply the evidence they reason over.
       \item Built agent workflows that triage client connectivity, roaming and device-health
-            problems across deployments of thousands of access points and switches, and draft
-            remediation steps for network operators.
+            problems across thousands of access points and switches, and draft remediation steps
+            for network operators.
       \item Developed correlation and inference pipelines over telemetry and client-experience
             metrics, so that investigation of routine faults takes seconds rather than hours.
       \item Adapted the preference-inference methods from my research to rank recommendations for
             customers whose priorities differ in reliability, cost and coverage.
     \end{duties}
   \item[2017--2020]
-    \role{Data Scientist}{Johnson Controls --- Cork, Ireland}
+    \role{Data Scientist}{Johnson Controls. Cork, Ireland}
     \begin{duties}
       \item Machine-learning lead for the intrusion-alarm, access-control and retail-analytics
             product lines.
       \item Alarm-panel classification by Pareto optimisation, root-cause analysis of events, and
-            site-independent signature generation for predictive security analysis; eight granted
-            US patents issued from this work.
+            site-independent signature generation. Eight granted US patents issued from this work.
       \item Relational probabilistic models in BLOG and Bayesian inference in PyMC3, deployed
             across large multi-site estates.
     \end{duties}
   \item[2014--2017]
-    \role{Post-Doctoral Fellow (Science Foundation Ireland)}
+    \role{Post-Doctoral Fellow, Science Foundation Ireland}
          {Insight Centre for Data Analytics, NUI Cork}
     \begin{duties}
       \item Probabilistic graphical models, clustering and influence diagrams for industrial
             decision problems, within a programme run with United Technology Research Centre.
       \item Preference inference with lexicographic and weighted-average models, partly with IBM
-            Research Dublin (AAAI 2017, IJCAI 2015, ICTAI 2015).
+            Research Dublin.
     \end{duties}
   \item[2005--2010]
-    \role{Lecturer in Mathematics}{Osmania University --- Hyderabad, India}
+    \role{Lecturer in Mathematics}{Osmania University. Hyderabad, India}
     \begin{duties}
-      \item Undergraduate teaching: abstract and linear algebra, real and numerical analysis,
-            differential and vector calculus, probability and statistics.
+      \item Undergraduate teaching in algebra, real and numerical analysis, calculus, probability
+            and statistics.
     \end{duties}
 \end{dated}
 
 \clearpage
 
 % ======================= publications =================================
-\section{Publications}
-{\footnotesize\color{soft}Peer-reviewed; complete list on
+\section{Peer-Reviewed Publications}
+{\small\color{soft}Listed most recent first. Complete record on
  \href{https://scholar.google.com/citations?user=NeuA3uAAAAAJ\&hl=en}{Google Scholar} and
  \href{https://dblp.org/pid/120/1333.html}{DBLP}.}
 \begin{refs}
-  \item[{[C6]}] R.~Marinescu, \me, N.~Wilson. Multi-objective influence diagrams with possibly
-        optimal policies. \venue{Proc. 31st AAAI Conference on Artificial Intelligence, 2017.}
-  \item[{[C5]}] Anne-Marie, \me, N.~Wilson. The comparison of multi-objective preference inference
-        based on lexicographic and weighted average models. \venue{Proc. 27th IEEE International
-        Conference on Tools with Artificial Intelligence (ICTAI), 2015.}
-  \item[{[C4]}] N.~Wilson, \me, R.~Marinescu. Computing possibly optimal solutions for
-        multi-objective constraint optimisation with trade-offs. \venue{Proc. 24th International
-        Joint Conference on Artificial Intelligence (IJCAI), 2015.}
-  \item[{[W1]}] Anne-Marie, \me, N.~Wilson. Multi-objective constraint optimisation with
-        lexicographic preference models. \venue{Workshop on Algorithmic Issues for Inference in
-        Graphical Models (AIGM), 2015.}
-  \item[{[C3]}] R.~Marinescu, \me, N.~Wilson. Multi-objective constraint optimisation with
-        trade-offs. \venue{Proc. 19th International Conference on Principles and Practice of
-        Constraint Programming (CP), 2013.}
-  \item[{[C2]}] R.~Marinescu, \me, N.~Wilson. Multi-objective influence diagrams with trade-offs.
-        \venue{Proc. 28th Conference on Uncertainty in Artificial Intelligence (UAI), 2012.}
+  \item[2017] R.~Marinescu, \me, N.~Wilson. Multi-objective influence diagrams with possibly
+        optimal policies. \venue{Proceedings of the 31st AAAI Conference on Artificial
+        Intelligence.}
+  \item[2015] Anne-Marie, \me, N.~Wilson. The comparison of multi-objective preference inference
+        based on lexicographic and weighted average models. \venue{Proceedings of the 27th IEEE
+        International Conference on Tools with Artificial Intelligence (ICTAI).}
+  \item[2015] N.~Wilson, \me, R.~Marinescu. Computing possibly optimal solutions for
+        multi-objective constraint optimisation with trade-offs. \venue{Proceedings of the 24th
+        International Joint Conference on Artificial Intelligence (IJCAI).}
+  \item[2015] Anne-Marie, \me, N.~Wilson. Multi-objective constraint optimisation with lexicographic
+        preference models. \venue{Workshop on Algorithmic Issues for Inference in Graphical Models
+        (AIGM).}
+  \item[2013] R.~Marinescu, \me, N.~Wilson. Multi-objective constraint optimisation with trade-offs.
+        \venue{Proceedings of the 19th International Conference on Principles and Practice of
+        Constraint Programming (CP).}
+  \item[2012] R.~Marinescu, \me, N.~Wilson. Multi-objective influence diagrams with trade-offs.
+        \venue{Proceedings of the 28th Conference on Uncertainty in Artificial Intelligence (UAI).}
 \end{refs}
 
 % ======================= patents ======================================
 \section{Granted US Patents}
-{\footnotesize\color{soft}Nine granted between 2019 and 2021; filings searchable on
+{\small\color{soft}Nine granted between 2019 and 2021, grouped by subject. Filings are searchable on
  \href{https://patents.justia.com/inventor/abdul-razak}{Justia} and
  \href{https://patents.google.com/?inventor=Abdul+Razak}{Google Patents}.}
 
 \group{Decision intelligence and maintenance}
 \begin{refs}
-  \item[{[P9]}] \me, L.\,A.~Deleris, R.~Marinescu, N.~Wilson. Interactive method to reduce the
-        amount of trade-off information required from decision-maker in multi-attribute
-        decision-making under uncertainty. \venue{Granted 2019.}
-  \item[{[P8]}] \me, G.~Subramanian, C.\,J.~Donovan. Virtual maintenance manager.
-        \venue{Granted 2019.}
-  \item[{[P7]}] D.~Horgan, \me, G.~Bernardi. Root-cause analysis of event occurrences.
-        \venue{Granted 2021.}
+  \item[2019] \me, L.\,A.~Deleris, R.~Marinescu, N.~Wilson. Interactive method to reduce the amount
+        of trade-off information required from decision-maker in multi-attribute decision-making
+        under uncertainty.
+  \item[2019] \me, G.~Subramanian, C.\,J.~Donovan. Virtual maintenance manager.
+  \item[2021] D.~Horgan, \me, G.~Bernardi. Root-cause analysis of event occurrences.
 \end{refs}
 
 \group{Alarm management}
 \begin{refs}
-  \item[{[P6]}] \me, M.~Stewart, G.~Subramanian. Automated alarm panel classification using Pareto
-        optimization. \venue{Granted 2020.}
-  \item[{[P5]}] \me. Systems and methods for managing alarm data of multiple locations.
-        \venue{Granted 2021.}
-  \item[{[P4]}] M.~Costello, F.~Fala, J.\,R.~Holliday, N.\,B.~Pavel, \me. Building security system
-        with alarm lists and alarm rule editing. \venue{Granted 2021.}
+  \item[2020] \me, M.~Stewart, G.~Subramanian. Automated alarm panel classification using Pareto
+        optimization.
+  \item[2021] \me. Systems and methods for managing alarm data of multiple locations.
+  \item[2021] M.~Costello, F.~Fala, J.\,R.~Holliday, N.\,B.~Pavel, \me. Building security system
+        with alarm lists and alarm rule editing.
 \end{refs}
 
 \group{Building security analytics}
 \begin{refs}
-  \item[{[P3]}] M.~Dziduch, C.\,J.~Donovan, \me. Building security analysis system with
-        site-independent signature generation for predictive security analysis. \venue{Granted 2020.}
-  \item[{[P2]}] M.~Dziduch, C.\,J.~Donovan, \me. Rules-based method of identifying misuse of
-        emergency fire exits using data generated by a security alarm system. \venue{Granted 2020.}
-  \item[{[P1]}] M.~Dziduch, C.\,J.~Donovan, \me. Systems and methods for managing a security system.
-        \venue{Granted 2020.}
+  \item[2020] M.~Dziduch, C.\,J.~Donovan, \me. Building security analysis system with
+        site-independent signature generation for predictive security analysis.
+  \item[2020] M.~Dziduch, C.\,J.~Donovan, \me. Rules-based method of identifying misuse of
+        emergency fire exits using data generated by a security alarm system.
+  \item[2020] M.~Dziduch, C.\,J.~Donovan, \me. Systems and methods for managing a security system.
 \end{refs}
 
 % ======================= honours ======================================
@@ -262,31 +269,32 @@ networked systems.
 \begin{plainlist}
   \item IEEE Senior Member, elevated May 2026.
   \item Science Foundation Ireland post-doctoral fellowship, Insight Centre for Data Analytics,
-        NUI Cork, 2014--2017.
-  \item IRCSET\,/\,IBM Enterprise Partnership Scheme scholarship; full doctoral funding, 2010--2013.
-  \item Osmania University merit scholarship (MSc, 2003--2005); ranked 40th of roughly 30{,}000
-        candidates in the university mathematics entrance examination.
+        NUI Cork, 2014 to 2017.
+  \item IRCSET\,/\,IBM Enterprise Partnership Scheme scholarship, full doctoral funding, 2010 to 2013.
+  \item Osmania University merit scholarship (MSc, 2003 to 2005), and 40th place of roughly
+        30{,}000 candidates in the university mathematics entrance examination.
 \end{plainlist}
 
 % ======================= service ======================================
-\section{Service and Talks}
+\section{Academic Service and Invited Talks}
 \begin{plainlist}
-  \item Reviewer, \textit{Computers and Electrical Engineering} (Elsevier); more than ten
+  \item Reviewer, \textit{Computers and Electrical Engineering} (Elsevier). More than ten
         manuscripts in artificial intelligence, wireless networking and intelligent systems.
-  \item Reviewer, IEEE International Conference on Communications (ICC); artificial-intelligence
+  \item Reviewer, IEEE International Conference on Communications (ICC), artificial-intelligence
         submissions to the 2025 technical programme.
   \item Invited talks: Sapienza University of Rome, on preference handling in decision making under
         certainty and uncertainty; NUI Galway, on probabilistic decision making under uncertainty;
         NUI Cork and IBM Research Dublin, during the Risk Management Colloboratory and United
         Technology Research Centre programmes.
   \item Conference presentations, oral and poster, at AAAI, IJCAI, UAI, CP and ICTAI.
-  \item Five years of undergraduate lecturing; mentoring of junior data scientists in industry.
+  \item Five years of undergraduate lecturing, and mentoring of junior data scientists in industry.
 \end{plainlist}
 
-% ======================= skills =======================================
-\section{Tools}
-\begin{description}[leftmargin=0.76in, style=sameline, font={\footnotesize\scshape\color{soft}},
-                    topsep=2pt, itemsep=1.6pt, parsep=0pt]
+% ======================= tools ========================================
+\section{Technical Skills}
+\begin{description}[leftmargin=0.82in, style=sameline,
+                    font={\small\bfseries\color{accent}},
+                    topsep=3pt, itemsep=2pt, parsep=0pt]
   \item[Programming] Python, C++ (STL, Boost, Eigen), SQL, PySpark, PyFlink.
   \item[Modelling] PyMC3, BLOG, Swift, ILOG CPLEX, LPSOLVE, scikit-learn.
   \item[Platforms] AWS SageMaker and Athena, Azure Databricks, streaming and batch pipelines.

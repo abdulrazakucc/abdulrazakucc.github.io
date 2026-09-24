@@ -1,29 +1,43 @@
 # Curriculum Vitae
 
-Two-page academic CV for Abdul Razak.
+Two-page CV for Abdul Razak.
 
-- `cv.tex` — the source, written for XeTeX and typeset in TeX Gyre Pagella (`newpxtext`).
-- `Abdul-Razak-CV.pdf` — the compiled, distributable PDF.
+- `cv.tex` is the source, written for XeTeX and set in TeX Gyre Pagella (`newpxtext`).
+- `Abdul-Razak-CV.pdf` is the compiled, distributable file.
 
-External references are set as named hyperlinks (Portfolio, Google Scholar, DBLP, ORCID, Justia,
-Google Patents) rather than printed URLs, so the page stays clean while every reference stays
-clickable.
+Contact details, publications and patents live in the source; publications and patents are ordered
+by year rather than by reference key. Web references are named hyperlinks (Portfolio, Google
+Scholar, DBLP, ORCID, Justia, Google Patents) and the email address is a `mailto:` link, so nothing
+is printed as a bare URL.
+
+## Colour
+
+The palette is defined in one block near the top of `cv.tex`:
+
+| Name | Value | Used for |
+| --- | --- | --- |
+| `paper` | `FAF8F4` | page background |
+| `band` | `15304E` | masthead block |
+| `accent` | `1D4E79` | headings, links, list marks |
+| `panel` | `F2EEE6` | research-interests panel |
+
+Changing those four values restyles the whole document.
 
 ## Building
 
 The document compiles with [Tectonic](https://tectonic-typesetting.github.io/), which fetches the
-packages it needs on first run and requires no local TeX installation:
+packages it needs and requires no local TeX installation:
 
 ```bash
 tectonic -X compile cv.tex --outdir .
 mv cv.pdf Abdul-Razak-CV.pdf
 ```
 
-It also compiles unchanged with a standard TeX Live installation:
+It also compiles unchanged with a full TeX Live installation:
 
 ```bash
 xelatex cv.tex   # or: latexmk -xelatex cv.tex
 ```
 
-After editing, check that the document still ends at two pages — the layout is tuned to fill them,
-and an added paragraph will push a third page.
+The layout is tuned to fill exactly two pages, so after editing check the page count; the footer
+prints it on every page.
