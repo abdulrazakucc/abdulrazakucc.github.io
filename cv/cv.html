@@ -2,649 +2,510 @@
 <html lang="en">
 <head>
 <meta charset="utf-8" />
-<title>Dr. Abdul Razak — Curriculum Vitae</title>
+<title>Abdul Razak — Curriculum Vitae</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --ink:#0f172a;
-    --ink-soft:#334155;
-    --ink-mute:#64748b;
-    --line:#e2e6ec;
-    --line-strong:#cbd5e1;
-    --accent:#1d4ed8;
-    --accent-soft:#eef3ff;
-    --gold:#b45309;
-    --serif:"Fraunces","Iowan Old Style",Georgia,serif;
+    --ink:#101720;
+    --body:#26303c;
+    --mute:#6b7683;
+    --rule:#d9dee5;
+    --rule-soft:#e8ebf0;
+    --accent:#14355e;
+    --accent-soft:#4a6da0;
+    --serif:"Source Serif 4","Iowan Old Style",Georgia,"Times New Roman",serif;
     --sans:"Inter",system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
   }
 
-  @page { size: Letter; margin: 0; }
+  @page{ size:Letter; margin:0; }
 
   *{ box-sizing:border-box; margin:0; padding:0; }
 
   html,body{ background:#fff; }
-
-  body, .stats, .stat, .tag{
+  body, .rulebar, .num, .pill{
     -webkit-print-color-adjust:exact;
     print-color-adjust:exact;
   }
 
   body{
-    font-family:var(--sans);
-    color:var(--ink-soft);
-    font-size:8.95pt;
-    line-height:1.4;
+    font-family:var(--serif);
+    font-size:9.3pt;
+    line-height:1.36;
+    color:var(--body);
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
   }
 
+  a{ color:var(--accent); text-decoration:none; }
+
   .page{
     width:8.5in;
     height:11in;
-    padding:0.5in 0.6in 0.34in;
+    padding:0.52in 0.72in 0.36in;
     position:relative;
     overflow:hidden;
-    page-break-after:always;
     display:flex;
     flex-direction:column;
+    page-break-after:always;
   }
   .page > *{ flex:0 0 auto; }
   .page:last-child{ page-break-after:auto; }
 
-  /* ---------- masthead ---------- */
-  .masthead{
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    gap:0.3in;
-    padding-bottom:9pt;
-    border-bottom:1.6pt solid var(--ink);
-  }
+  /* ================= masthead ================= */
+  .masthead{ text-align:center; }
   .name{
     font-family:var(--serif);
-    font-size:27pt;
+    font-size:21.5pt;
     font-weight:600;
-    letter-spacing:-0.4pt;
+    letter-spacing:2.3pt;
+    text-transform:uppercase;
     color:var(--ink);
-    line-height:1.02;
+    line-height:1;
   }
-  .name .hon{ font-size:15.5pt; font-weight:400; color:var(--ink-mute); letter-spacing:0; }
-  .role{
+  .subname{
     margin-top:5pt;
-    font-size:9pt;
-    font-weight:600;
-    letter-spacing:1.2pt;
-    white-space:nowrap;
-    text-transform:uppercase;
-    color:var(--accent);
-  }
-  .role span{ color:var(--line-strong); font-weight:400; padding:0 3pt; }
-  .contact{
-    text-align:right;
-    font-size:8.1pt;
-    line-height:1.62;
-    color:var(--ink-mute);
-    white-space:nowrap;
-  }
-  .contact a{ color:var(--ink-soft); text-decoration:none; }
-  .contact .site{
-    display:block;
-    font-weight:600;
-    color:var(--accent);
-    font-size:8.6pt;
-    letter-spacing:0.1pt;
-  }
-  .contact .label{ color:var(--line-strong); padding:0 2pt; }
-
-  /* ---------- summary + stats ---------- */
-  .summary{
-    margin-top:10pt;
-    font-size:9pt;
-    line-height:1.48;
-    color:var(--ink-soft);
-  }
-  .summary strong{ color:var(--ink); font-weight:600; }
-
-  .stats{
-    margin-top:10pt;
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    border:0.8pt solid var(--line);
-    border-radius:4pt;
-    background:var(--accent-soft);
-    overflow:hidden;
-  }
-  .stat{
-    padding:5.4pt 7pt;
-    border-right:0.8pt solid #dbe3f5;
-    text-align:center;
-  }
-  .stat:last-child{ border-right:0; }
-  .stat b{
-    display:block;
-    font-family:var(--serif);
-    font-size:13.2pt;
-    font-weight:600;
-    color:var(--ink);
-    line-height:1.08;
-  }
-  .stat span{
-    display:block;
-    margin-top:1.5pt;
-    font-size:6.9pt;
-    letter-spacing:0.55pt;
-    text-transform:uppercase;
-    color:var(--ink-mute);
-    font-weight:500;
-  }
-
-  /* ---------- section headings ---------- */
-  h2{
     font-family:var(--sans);
-    font-size:8.5pt;
-    font-weight:700;
-    letter-spacing:1.9pt;
-    text-transform:uppercase;
-    color:var(--ink);
-    margin:9.2pt 0 5.2pt;
-    padding-bottom:3.5pt;
-    border-bottom:0.8pt solid var(--line-strong);
-    display:flex;
-    align-items:baseline;
-    justify-content:space-between;
-  }
-  h2 em{
-    font-style:normal;
-    font-size:7.1pt;
-    font-weight:500;
-    letter-spacing:0.3pt;
-    text-transform:none;
-    color:var(--ink-mute);
-  }
-  h2 em a{ color:var(--accent); text-decoration:none; }
-
-  /* ---------- expertise grid ---------- */
-  .expertise{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:5pt 16pt;
-  }
-  .exp-item{ display:flex; gap:5pt; }
-  .exp-item .dot{
-    flex:none;
-    width:3.6pt; height:3.6pt;
-    margin-top:4.2pt;
-    border-radius:50%;
-    background:var(--accent);
-  }
-  .exp-item b{ color:var(--ink); font-weight:600; }
-  .exp-item p{ font-size:8.6pt; line-height:1.38; }
-
-  /* ---------- experience ---------- */
-  .job{ margin-bottom:6pt; }
-  .job:last-child{ margin-bottom:0; }
-  .job-head{
-    display:flex;
-    align-items:baseline;
-    justify-content:space-between;
-    gap:10pt;
-  }
-  .job-title{
-    font-size:10pt;
-    font-weight:600;
-    color:var(--ink);
-    font-family:var(--serif);
-  }
-  .job-title .org{ color:var(--accent); }
-  .job-meta{
     font-size:7.6pt;
     font-weight:500;
-    letter-spacing:0.5pt;
-    color:var(--ink-mute);
+    letter-spacing:1.7pt;
     white-space:nowrap;
     text-transform:uppercase;
+    color:var(--accent-soft);
   }
-  .job ul{ margin:3.2pt 0 0 10pt; }
-  .job li{
+  .rulebar{
+    margin:9pt auto 0;
+    width:100%;
+    height:2.6pt;
+    border-top:0.9pt solid var(--ink);
+    border-bottom:0.9pt solid var(--ink);
+  }
+  .links{
+    margin-top:7.5pt;
+    font-family:var(--sans);
+    font-size:8.3pt;
+    color:var(--mute);
+    letter-spacing:0.15pt;
+  }
+  .links a{ font-weight:600; border-bottom:0.5pt solid #c3cddd; padding-bottom:0.6pt; }
+  .links .sep{ color:#c3cddd; padding:0 5pt; }
+  .links .plain{ color:var(--body); }
+
+  /* ================= sections ================= */
+  h2{
+    font-family:var(--sans);
+    font-size:8.1pt;
+    font-weight:700;
+    letter-spacing:2.2pt;
+    text-transform:uppercase;
+    color:var(--ink);
+    margin:8.6pt 0 4.4pt;
+    display:flex;
+    align-items:center;
+    gap:8pt;
+  }
+  h2::after{
+    content:"";
+    flex:1;
+    height:0.7pt;
+    background:var(--rule);
+  }
+  h2 .count{
+    font-size:7.2pt;
+    font-weight:500;
+    letter-spacing:0.9pt;
+    color:var(--mute);
+    flex:none;
+  }
+
+  .lede{
+    font-size:9.5pt;
+    line-height:1.45;
+    color:var(--body);
+    text-align:justify;
+  }
+  .lede b{ color:var(--ink); font-weight:600; }
+
+  .interests{
+    margin-top:5pt;
+    font-size:8.9pt;
+    line-height:1.4;
+    color:var(--body);
+  }
+  .interests .k{
+    font-family:var(--sans);
+    font-size:7.4pt;
+    font-weight:700;
+    letter-spacing:1.3pt;
+    text-transform:uppercase;
+    color:var(--accent);
+  }
+
+  /* ================= gutter entries ================= */
+  .entry{
+    display:grid;
+    grid-template-columns:72pt 1fr;
+    gap:0 12pt;
+    margin-bottom:5pt;
+  }
+  .entry:last-child{ margin-bottom:0; }
+  .when{
+    font-family:var(--sans);
+    font-size:7.6pt;
+    font-weight:600;
+    letter-spacing:0.6pt;
+    color:var(--mute);
+    text-transform:uppercase;
+    padding-top:1.8pt;
+    line-height:1.35;
+  }
+  .when span{ display:block; font-weight:400; letter-spacing:0.3pt; color:#98a2af; }
+  .headline{
+    font-size:9.9pt;
+    font-weight:600;
+    color:var(--ink);
+    line-height:1.24;
+  }
+  .where{
+    font-size:9.1pt;
+    color:var(--accent);
+    font-weight:600;
+    margin-top:0.8pt;
+  }
+  .where em{ font-style:italic; font-weight:400; color:var(--mute); }
+  .detail{ margin-top:1.8pt; font-size:8.9pt; line-height:1.37; }
+  .detail i{ color:var(--mute); }
+
+  ul.pts{ margin:2.6pt 0 0; }
+  ul.pts li{
     list-style:none;
     position:relative;
-    padding-left:8pt;
-    margin-bottom:1.9pt;
-    font-size:8.7pt;
-    line-height:1.4;
+    padding-left:9.5pt;
+    margin-bottom:2pt;
+    font-size:8.95pt;
+    line-height:1.37;
   }
-  .job li::before{
+  ul.pts li::before{
     content:"";
     position:absolute;
-    left:0; top:4.6pt;
-    width:3.2pt; height:0.9pt;
-    background:var(--line-strong);
+    left:0; top:4.4pt;
+    width:4pt; height:0.8pt;
+    background:var(--accent-soft);
   }
-  .job li b{ color:var(--ink); font-weight:600; }
-  .job-note{
-    margin-top:2.4pt;
-    font-size:8.55pt;
-    line-height:1.4;
-  }
+  ul.pts li b{ color:var(--ink); font-weight:600; }
+  ul.pts li:last-child{ margin-bottom:0; }
 
-  /* ---------- page 2 columns ---------- */
-  .cols{
+  /* ================= numbered lists ================= */
+  .item{
     display:grid;
-    grid-template-columns:1.52fr 1fr;
-    gap:0 24pt;
-    flex:1;
+    grid-template-columns:22pt 1fr;
+    gap:0 7pt;
+    margin-bottom:3.4pt;
   }
-  .cols .rail{ border-left:0.8pt solid var(--line); padding-left:20pt; }
-  .cols > div > *{ break-inside:avoid; }
-  .cols h2:first-child{ margin-top:0; }
-
-  /* ---------- publications ---------- */
-  .pub{ margin-bottom:5.4pt; display:flex; gap:7pt; }
-  .pub .venue{
-    flex:none;
-    width:38pt;
-    font-size:7.2pt;
+  .num{
+    font-family:var(--sans);
+    font-size:7.4pt;
     font-weight:700;
     letter-spacing:0.4pt;
     color:var(--accent);
-    text-transform:uppercase;
-    padding-top:0.8pt;
+    padding-top:2.2pt;
   }
-  .pub .venue small{ display:block; font-weight:500; color:var(--ink-mute); letter-spacing:0.2pt; }
-  .pub-t{ font-size:8.8pt; font-weight:600; color:var(--ink); line-height:1.34; }
-  .pub-a{ font-size:8.1pt; color:var(--ink-mute); margin-top:0.8pt; }
+  .bib{ font-size:9.05pt; line-height:1.34; color:var(--body); }
+  .bib .t{ font-weight:600; color:var(--ink); }
+  .bib .au{ color:var(--body); }
+  .bib .au b{ color:var(--ink); font-weight:600; }
+  .bib .v{ font-style:italic; color:var(--mute); }
+  .patents .item{ margin-bottom:2.8pt; }
+  .patents .bib{ font-size:8.85pt; }
 
-  /* ---------- patents ---------- */
-  .pat-group{ margin-bottom:6pt; }
-  .pat-group h3{
-    font-size:8.3pt;
-    font-weight:600;
-    color:var(--ink);
-    margin-bottom:2.8pt;
-    display:flex;
-    justify-content:space-between;
-    align-items:baseline;
-  }
-  .pat-group h3 span{
-    font-size:6.9pt;
-    font-weight:500;
-    letter-spacing:0.5pt;
+  .grouplabel{
+    font-family:var(--sans);
+    font-size:7.3pt;
+    font-weight:700;
+    letter-spacing:1.4pt;
     text-transform:uppercase;
-    color:var(--ink-mute);
+    color:var(--accent-soft);
+    margin:5pt 0 2.8pt;
   }
-  .pat{
-    display:flex;
-    gap:6pt;
-    font-size:8.5pt;
-    line-height:1.36;
-    margin-bottom:1.8pt;
-  }
-  .pat .yr{
-    flex:none;
-    width:20pt;
-    font-size:7.4pt;
-    font-weight:600;
-    color:var(--ink-mute);
-    padding-top:0.9pt;
-  }
+  .grouplabel:first-of-type{ margin-top:1pt; }
 
-  /* ---------- rail blocks ---------- */
-  .edu{ margin-bottom:6.4pt; }
-  .edu .deg{ font-size:8.9pt; font-weight:600; color:var(--ink); line-height:1.32; }
-  .edu .inst{ font-size:8.2pt; color:var(--ink-soft); margin-top:1pt; }
-  .edu .yr{
-    font-size:7.2pt;
-    letter-spacing:0.6pt;
-    text-transform:uppercase;
-    color:var(--ink-mute);
-    font-weight:500;
-    margin-top:1.4pt;
-  }
-  .edu .thesis{ font-size:8pt; color:var(--ink-mute); margin-top:1.6pt; font-style:italic; line-height:1.34; }
-
-  ul.plain{ margin:0; }
-  ul.plain li{
+  /* ================= compact lists ================= */
+  ul.stack{ margin:0; }
+  ul.stack li{
     list-style:none;
     position:relative;
-    padding-left:9pt;
-    margin-bottom:2.8pt;
-    font-size:8.35pt;
+    padding-left:11pt;
+    margin-bottom:2.2pt;
+    font-size:8.95pt;
     line-height:1.36;
   }
-  ul.plain li::before{
+  ul.stack li::before{
     content:"";
     position:absolute;
-    left:0; top:3.9pt;
-    width:3.4pt; height:3.4pt;
-    border:0.9pt solid var(--accent);
+    left:1pt; top:4pt;
+    width:3pt; height:3pt;
     border-radius:50%;
+    background:var(--accent-soft);
   }
-  ul.plain li b{ color:var(--ink); font-weight:600; }
+  ul.stack li b{ color:var(--ink); font-weight:600; }
+  ul.stack li em{ font-style:italic; color:var(--mute); }
 
-  .tags{ display:flex; flex-wrap:wrap; gap:3.2pt; }
-  .tag{
+  .two{ display:grid; grid-template-columns:1fr 1fr; gap:0 26pt; }
+
+  .skill{
+    display:grid;
+    grid-template-columns:84pt 1fr;
+    gap:0 10pt;
+    margin-bottom:2.4pt;
+    font-size:8.95pt;
+    line-height:1.36;
+  }
+  .skill .k{
+    font-family:var(--sans);
     font-size:7.4pt;
-    font-weight:500;
-    color:var(--ink-soft);
-    border:0.8pt solid var(--line);
-    background:#fafbfd;
-    border-radius:3pt;
-    padding:1.4pt 4.2pt;
-    line-height:1.2;
-  }
-  .tag-head{
-    font-size:7.2pt;
     font-weight:700;
-    letter-spacing:0.9pt;
+    letter-spacing:1.1pt;
     text-transform:uppercase;
-    color:var(--ink-mute);
-    margin:5.5pt 0 3pt;
-  }
-  .tag-head:first-child{ margin-top:0; }
-
-  .kv{ font-size:8.35pt; margin-bottom:2.2pt; line-height:1.36; }
-  .kv b{ color:var(--ink); font-weight:600; }
-
-  .toolkit{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:3pt 16pt;
-  }
-  .profile-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:0 16pt;
+    color:var(--mute);
+    padding-top:1.6pt;
   }
 
-  /* ---------- footers ---------- */
+  /* ================= footer ================= */
   .foot{
     margin-top:auto;
-    padding-top:5pt;
-    border-top:0.8pt solid var(--line);
+    padding-top:6pt;
+    border-top:0.7pt solid var(--rule-soft);
     display:flex;
     justify-content:space-between;
     align-items:baseline;
-    font-size:7.4pt;
-    letter-spacing:0.4pt;
-    color:var(--ink-mute);
+    font-family:var(--sans);
+    font-size:7.3pt;
+    letter-spacing:0.5pt;
+    color:var(--mute);
   }
-  .foot a{ color:var(--accent); text-decoration:none; font-weight:600; }
+  .foot a{ font-weight:600; }
 </style>
 </head>
 <body>
 
-<!-- ============================ PAGE 1 ============================ -->
+<!-- ============================== PAGE 1 ============================== -->
 <section class="page">
 
   <header class="masthead">
-    <div>
-      <div class="name"><span class="hon">Dr.</span> Abdul Razak</div>
-      <div class="role">Staff Data Scientist <span>&bull;</span> AI &amp; Machine Learning Research</div>
-    </div>
-    <div class="contact">
-      <a class="site" href="https://abdulrazakucc.github.io/">abdulrazakucc.github.io</a>
-      Salem, United States <span class="label">&bull;</span> Irish citizen
-      <br />
-      <a href="https://www.linkedin.com/in/data-analytics/">LinkedIn</a> <span class="label">&bull;</span>
-      <a href="https://scholar.google.com/citations?user=NeuA3uAAAAAJ&amp;hl=en">Google&nbsp;Scholar</a> <span class="label">&bull;</span>
-      <a href="https://dblp.org/pid/120/1333.html">DBLP</a>
-      <br />
-      <a href="https://orcid.org/0009-0004-6819-147X">ORCID 0009-0004-6819-147X</a>
+    <div class="name">Abdul Razak</div>
+    <div class="subname">PhD &middot; Staff Data Scientist &middot; AI and Machine Learning Research</div>
+    <div class="rulebar"></div>
+    <div class="links">
+      <span class="plain">Salem, United States</span><span class="sep">|</span>
+      <a href="https://abdulrazakucc.github.io/">Portfolio</a><span class="sep">|</span>
+      <a href="https://scholar.google.com/citations?user=NeuA3uAAAAAJ&amp;hl=en">Google Scholar</a><span class="sep">|</span>
+      <a href="https://dblp.org/pid/120/1333.html">DBLP</a><span class="sep">|</span>
+      <a href="https://orcid.org/0009-0004-6819-147X">ORCID</a><span class="sep">|</span>
+      <a href="https://patents.google.com/?inventor=Abdul+Razak">Patents</a><span class="sep">|</span>
+      <a href="https://www.linkedin.com/in/data-analytics/">LinkedIn</a>
     </div>
   </header>
 
-  <p class="summary">
-    Data scientist with <strong>over a decade of research and production experience</strong> in probabilistic,
-    multi-objective and generative AI systems. Currently leading generative-AI and machine-learning work for
-    enterprise wireless networks at Extreme Networks, where language-model reasoning is grounded in statistical
-    signal processing and domain knowledge graphs to <strong>cut network investigation time from hours to
-    seconds</strong>. Doctorate in AI, publications at AAAI, IJCAI, UAI, CP and ICTAI, <strong>nine granted US
-    patents</strong>.
+  <h2>Research Profile</h2>
+  <p class="lede">
+    Researcher and data scientist working at the intersection of <b>probabilistic reasoning, multi-objective
+    decision making and generative artificial intelligence</b>. Doctoral and post-doctoral research with IBM
+    Research Labs Dublin and United Technology Research Centre produced exact and approximate algorithms for
+    decision problems with imprecise preferences and conflicting objectives, published at AAAI, IJCAI, UAI, CP
+    and ICTAI. Now leads the generative-AI research programme for enterprise wireless networks at Extreme
+    Networks, with nine granted US patents and a record of translating research into production systems.
   </p>
 
-  <div class="stats">
-    <div class="stat"><b>10+</b><span>Years in AI / ML</span></div>
-    <div class="stat"><b>9</b><span>Granted US Patents</span></div>
-    <div class="stat"><b>7</b><span>Publications</span></div>
-    <div class="stat"><b>PhD</b><span>AI, NUI Cork</span></div>
-    <div class="stat"><b>IEEE</b><span>Senior Member 2026</span></div>
+  <p class="interests">
+    <span class="k">Research interests</span> &nbsp;Multi-objective decision making under uncertainty &middot;
+    preference elicitation and inference &middot; probabilistic graphical models and influence diagrams &middot;
+    grounded and retrieval-augmented generative AI &middot; constraint optimisation &middot; machine learning
+    for networked systems.
+  </p>
+
+  <h2>Education</h2>
+
+  <div class="entry">
+    <div class="when">Nov 2010 &ndash; May 2014<span>Cork, Ireland</span></div>
+    <div>
+      <div class="headline">PhD in Computer Science (Artificial Intelligence)</div>
+      <div class="where">National University of Ireland, Cork <em>&mdash; Cork Constraint Computation Centre</em></div>
+      <div class="detail">
+        Thesis: <i>Reasoning with Imprecise Trade-offs in Decision Making under Certainty and Uncertainty</i>
+        &mdash; exact and approximate algorithms for multi-objective constraint optimisation and influence
+        diagrams. Funded by the IRCSET / IBM Enterprise Partnership Scheme.
+      </div>
+    </div>
   </div>
 
-  <h2>Core Expertise <em>Detailed practice areas at abdulrazakucc.github.io/work.html</em></h2>
-  <div class="expertise">
-    <div class="exp-item"><span class="dot"></span><p><b>Generative AI for operations.</b> Grounded LLM reasoning, autonomous agent workflows, retrieval and knowledge graphs, multi-modal telemetry correlation.</p></div>
-    <div class="exp-item"><span class="dot"></span><p><b>Probabilistic modelling.</b> Bayesian inference, probabilistic graphical models, influence diagrams, calibrated uncertainty for industrial decisions.</p></div>
-    <div class="exp-item"><span class="dot"></span><p><b>Multi-objective optimisation.</b> Preference elicitation and inference, Pareto optimisation, constraint programming under imprecise trade-offs.</p></div>
-    <div class="exp-item"><span class="dot"></span><p><b>Research-to-production engineering.</b> Real-time streaming and batch ML pipelines on AWS and Azure, from prototype to service-level objectives.</p></div>
+  <div class="entry">
+    <div class="when">Jun 2003 &ndash; May 2005<span>Hyderabad</span></div>
+    <div>
+      <div class="headline">MSc in Mathematics with Computer Science</div>
+      <div class="where">Osmania University <em>&mdash; awarded the University Merit Scholarship</em></div>
+    </div>
   </div>
 
-  <h2>Professional Experience</h2>
-
-  <article class="job">
-    <div class="job-head">
-      <div class="job-title">Staff Data Scientist, <span class="org">Extreme Networks</span></div>
-      <div class="job-meta">2020 &ndash; Present &bull; Salem, US (prev. Cork, IE)</div>
+  <div class="entry">
+    <div class="when">Jun 2000 &ndash; Mar 2003<span>Hyderabad</span></div>
+    <div>
+      <div class="headline">BSc in Mathematics, Statistics and Computer Science</div>
+      <div class="where">Osmania University</div>
     </div>
-    <ul>
-      <li>Lead the data-science strategy for <b>generative AI in enterprise wireless networking</b>, combining language-model reasoning with statistical signal processing and a knowledge graph of devices, sites, topology and configuration.</li>
-      <li>Designed <b>autonomous agent workflows</b> that investigate client behaviour, roaming failures and device-performance anomalies across thousands of access points and switches, and propose remediation plans to operators.</li>
-      <li>Built <b>network-aware inference pipelines</b> and multi-modal correlation across telemetry, device health and client-experience metrics, suppressing false alerts and cutting investigation time on common issues from hours to seconds.</li>
-      <li>Apply preference inference and multi-objective methods to <b>personalise networking recommendations</b> across widely differing deployment sizes.</li>
-    </ul>
-  </article>
+  </div>
 
-  <article class="job">
-    <div class="job-head">
-      <div class="job-title">Data Scientist, <span class="org">Johnson Controls</span></div>
-      <div class="job-meta">2017 &ndash; 2020 &bull; Cork, Ireland</div>
-    </div>
-    <ul>
-      <li>Led machine-learning work across the <b>intrusion-alarm, access-control and retail-analytics</b> product lines, delivering supervised, unsupervised and probabilistic models into commercial building-security products.</li>
-      <li>Co-invented <b>eight granted US patents</b> on Pareto-optimal alarm classification, site-independent signature generation and rules-based misuse detection.</li>
-      <li>Applied relational probabilistic programming (BLOG) and Bayesian inference (PyMC3) to alarm classification and event root-cause analysis across large multi-site estates.</li>
-    </ul>
-  </article>
+  <h2>Appointments</h2>
 
-  <article class="job">
-    <div class="job-head">
-      <div class="job-title">SFI Post-Doctoral Fellow, <span class="org">Insight Centre for Data Analytics, NUI Cork</span></div>
-      <div class="job-meta">2014 &ndash; 2017 &bull; Cork, Ireland</div>
+  <div class="entry">
+    <div class="when">2020 &ndash; Present<span>Salem, US</span></div>
+    <div>
+      <div class="headline">Staff Data Scientist</div>
+      <div class="where">Extreme Networks <em>&mdash; previously Cork, Ireland</em></div>
+      <ul class="pts">
+        <li>Lead <b>generative AI for enterprise wireless networking</b>: language-model reasoning composed with statistical signal processing and a knowledge graph of devices, sites and topology.</li>
+        <li>Designed <b>autonomous agent workflows</b> that diagnose client behaviour, roaming failure and device anomalies across thousands of access points and switches, and propose remediation.</li>
+        <li>Built <b>multi-modal inference pipelines</b> over telemetry, device health and client experience, cutting fault investigation from hours to seconds; transferred preference inference into personalised recommendations.</li>
+      </ul>
     </div>
-    <ul>
-      <li>Held a <b>Science Foundation Ireland Post-Doctoral Fellowship</b> in a United Technology Research Centre programme on probabilistic graphical models, clustering and influence diagrams for industrial decisions.</li>
-      <li>Extended the doctoral line to <b>lexicographic and weighted-average preference models</b> and interactive elicitation with IBM Research Labs Dublin; published at AAAI 2017, IJCAI 2015 and ICTAI 2015.</li>
-    </ul>
-  </article>
+  </div>
 
-  <article class="job">
-    <div class="job-head">
-      <div class="job-title">Doctoral Researcher, <span class="org">Cork Constraint Computation Centre, NUI Cork</span></div>
-      <div class="job-meta">2010 &ndash; 2014 &bull; Cork, Ireland</div>
+  <div class="entry">
+    <div class="when">2017 &ndash; 2020<span>Cork, Ireland</span></div>
+    <div>
+      <div class="headline">Data Scientist</div>
+      <div class="where">Johnson Controls</div>
+      <ul class="pts">
+        <li>Led machine learning across the <b>intrusion-alarm, access-control and retail-analytics</b> lines, delivering supervised, unsupervised and probabilistic models into commercial products.</li>
+        <li>Applied relational probabilistic programming (BLOG) and Bayesian inference (PyMC3) to alarm classification and root-cause analysis; <b>eight granted US patents</b> issued from this work.</li>
+      </ul>
     </div>
-    <p class="job-note">
-      Funded by the <b>IRCSET / IBM Enterprise Partnership Scheme</b> within IBM's Risk Management Colloboratory.
-      Developed exact and approximate algorithms for <b>multi-objective constraint optimisation and influence diagrams
-      with imprecise trade-offs</b>, including interactive elicitation that minimises the input required from a decision maker.
-    </p>
-  </article>
+  </div>
 
-  <article class="job">
-    <div class="job-head">
-      <div class="job-title">Lecturer in Mathematics, <span class="org">Osmania University</span></div>
-      <div class="job-meta">2005 &ndash; 2010 &bull; Hyderabad, India</div>
+  <div class="entry">
+    <div class="when">2014 &ndash; 2017<span>Cork, Ireland</span></div>
+    <div>
+      <div class="headline">Science Foundation Ireland Post-Doctoral Fellow</div>
+      <div class="where">Insight Centre for Data Analytics, NUI Cork</div>
+      <ul class="pts">
+        <li>Research on <b>probabilistic graphical models, clustering and influence diagrams</b> for industrial decisions within a United Technology Research Centre programme; extended the doctoral line to <b>lexicographic and weighted-average preference models</b> with IBM Research Labs Dublin.</li>
+      </ul>
     </div>
-    <p class="job-note">
-      Taught algebra, real and numerical analysis, calculus, probability and statistics to undergraduate cohorts.
-    </p>
-  </article>
+  </div>
+
+  <div class="entry">
+    <div class="when">2005 &ndash; 2010<span>Hyderabad</span></div>
+    <div>
+      <div class="headline">Lecturer in Mathematics</div>
+      <div class="where">Osmania University</div>
+      <div class="detail">Taught algebra, analysis, calculus, probability and statistics to undergraduate cohorts.</div>
+    </div>
+  </div>
 
   <div class="foot">
-    <span>Dr. Abdul Razak &bull; Curriculum Vitae</span>
-    <span>Full portfolio: <a href="https://abdulrazakucc.github.io/">abdulrazakucc.github.io</a> &bull; Page 1 of 2</span>
+    <span>Abdul Razak &middot; Curriculum Vitae</span>
+    <span>Extended detail and project write-ups: <a href="https://abdulrazakucc.github.io/">online portfolio</a> &middot; Page 1 of 2</span>
   </div>
 </section>
 
-<!-- ============================ PAGE 2 ============================ -->
+<!-- ============================== PAGE 2 ============================== -->
 <section class="page">
-  <div class="cols">
 
-    <!-- ---------- main column ---------- -->
-    <div>
-      <h2>Selected Publications <em>Full list: <a href="https://abdulrazakucc.github.io/research.html">/research.html</a></em></h2>
+  <h2>Peer-Reviewed Publications <span class="count">Complete list on <a href="https://scholar.google.com/citations?user=NeuA3uAAAAAJ&amp;hl=en">Google Scholar</a> and <a href="https://dblp.org/pid/120/1333.html">DBLP</a></span></h2>
 
-      <div class="pub">
-        <div class="venue">AAAI<small>2017</small></div>
-        <div>
-          <div class="pub-t">Multi-objective Influence Diagrams with Possibly Optimal Policies</div>
-          <div class="pub-a">R. Marinescu, A. Razak, N. Wilson &bull; 31st AAAI Conference on Artificial Intelligence</div>
-        </div>
-      </div>
+  <div class="item"><div class="num">[C6]</div><div class="bib">
+    <span class="t">Multi-objective Influence Diagrams with Possibly Optimal Policies.</span>
+    <span class="au">R. Marinescu, <b>A. Razak</b>, N. Wilson.</span>
+    <span class="v">In Proc. 31st AAAI Conference on Artificial Intelligence, 2017.</span></div></div>
 
-      <div class="pub">
-        <div class="venue">ICTAI<small>2015</small></div>
-        <div>
-          <div class="pub-t">The Comparison of Multi-Objective Preference Inference Based on Lexicographic and Weighted Average Models</div>
-          <div class="pub-a">Anne-Marie, A. Razak, N. Wilson &bull; 27th IEEE International Conference on Tools with Artificial Intelligence</div>
-        </div>
-      </div>
+  <div class="item"><div class="num">[C5]</div><div class="bib">
+    <span class="t">The Comparison of Multi-Objective Preference Inference Based on Lexicographic and Weighted Average Models.</span>
+    <span class="au">Anne-Marie, <b>A. Razak</b>, N. Wilson.</span>
+    <span class="v">In Proc. 27th IEEE Int. Conf. on Tools with Artificial Intelligence (ICTAI), 2015.</span></div></div>
 
-      <div class="pub">
-        <div class="venue">IJCAI<small>2015</small></div>
-        <div>
-          <div class="pub-t">Computing Possibly Optimal Solutions for Multi-Objective Constraint Optimisation with Trade-offs</div>
-          <div class="pub-a">N. Wilson, A. Razak, R. Marinescu &bull; 24th International Joint Conference on Artificial Intelligence</div>
-        </div>
-      </div>
+  <div class="item"><div class="num">[C4]</div><div class="bib">
+    <span class="t">Computing Possibly Optimal Solutions for Multi-Objective Constraint Optimisation with Trade-offs.</span>
+    <span class="au">N. Wilson, <b>A. Razak</b>, R. Marinescu.</span>
+    <span class="v">In Proc. 24th International Joint Conference on Artificial Intelligence (IJCAI), 2015.</span></div></div>
 
-      <div class="pub">
-        <div class="venue">AIGM<small>2015</small></div>
-        <div>
-          <div class="pub-t">Multi-Objective Constraint Optimisation with Lexicographic Preference Models</div>
-          <div class="pub-a">Anne-Marie, A. Razak, N. Wilson &bull; Workshop on Algorithmic Issues for Inference in Graphical Models</div>
-        </div>
-      </div>
+  <div class="item"><div class="num">[C3]</div><div class="bib">
+    <span class="t">Multi-objective Constraint Optimisation with Trade-offs.</span>
+    <span class="au">R. Marinescu, <b>A. Razak</b>, N. Wilson.</span>
+    <span class="v">In Proc. 19th Int. Conf. on Principles and Practice of Constraint Programming (CP), 2013.</span></div></div>
 
-      <div class="pub">
-        <div class="venue">CP<small>2013</small></div>
-        <div>
-          <div class="pub-t">Multi-objective Constraint Optimisation with Trade-offs</div>
-          <div class="pub-a">R. Marinescu, A. Razak, N. Wilson &bull; 19th International Conference on Principles and Practice of Constraint Programming</div>
-        </div>
-      </div>
+  <div class="item"><div class="num">[C2]</div><div class="bib">
+    <span class="t">Multi-objective Influence Diagrams with Trade-offs.</span>
+    <span class="au">R. Marinescu, <b>A. Razak</b>, N. Wilson.</span>
+    <span class="v">In Proc. 28th Conference on Uncertainty in Artificial Intelligence (UAI), 2012.</span></div></div>
 
-      <div class="pub">
-        <div class="venue">UAI<small>2012</small></div>
-        <div>
-          <div class="pub-t">Multi-objective Influence Diagrams with Trade-offs</div>
-          <div class="pub-a">R. Marinescu, A. Razak, N. Wilson &bull; 28th Conference on Uncertainty in Artificial Intelligence</div>
-        </div>
-      </div>
+  <div class="item"><div class="num">[W1]</div><div class="bib">
+    <span class="t">Multi-Objective Constraint Optimisation with Lexicographic Preference Models.</span>
+    <span class="au">Anne-Marie, <b>A. Razak</b>, N. Wilson.</span>
+    <span class="v">Workshop on Algorithmic Issues for Inference in Graphical Models (AIGM), 2015.</span></div></div>
 
-      <h2>Granted US Patents <em>Nine granted, 2019&ndash;2021 &bull; <a href="https://abdulrazakucc.github.io/patents.html">/patents.html</a></em></h2>
+  <h2>Granted US Patents <span class="count">Nine granted, 2019&ndash;2021 &middot; <a href="https://patents.justia.com/inventor/abdul-razak">Justia</a></span></h2>
 
-      <div class="pat-group">
-        <h3>Decision intelligence and maintenance reasoning <span>3 patents</span></h3>
-        <div class="pat"><span class="yr">2019</span><span>Interactive method to reduce the amount of trade-off information required from decision-maker in multi-attribute decision-making under uncertainty</span></div>
-        <div class="pat"><span class="yr">2019</span><span>Virtual Maintenance Manager</span></div>
-        <div class="pat"><span class="yr">2021</span><span>Root-cause analysis of event occurrences</span></div>
-      </div>
+  <div class="patents">
+  <div class="grouplabel">Decision intelligence and maintenance reasoning</div>
+  <div class="item"><div class="num">[P9]</div><div class="bib">
+    <span class="t">Interactive method to reduce the amount of trade-off information required from decision-maker in multi-attribute decision-making under uncertainty.</span>
+    <span class="au"><b>A. Razak</b>, L. A. Deleris, R. Marinescu, N. Wilson.</span> <span class="v">Granted 2019.</span></div></div>
+  <div class="item"><div class="num">[P8]</div><div class="bib">
+    <span class="t">Virtual Maintenance Manager.</span>
+    <span class="au"><b>A. Razak</b>, G. Subramanian, C. J. Donovan.</span> <span class="v">Granted 2019.</span></div></div>
+  <div class="item"><div class="num">[P7]</div><div class="bib">
+    <span class="t">Root-cause analysis of event occurrences.</span>
+    <span class="au">D. Horgan, <b>A. Razak</b>, G. Bernardi.</span> <span class="v">Granted 2021.</span></div></div>
 
-      <div class="pat-group">
-        <h3>Alarm management and optimisation <span>3 patents</span></h3>
-        <div class="pat"><span class="yr">2020</span><span>Automated Alarm Panel Classification using Pareto Optimization</span></div>
-        <div class="pat"><span class="yr">2021</span><span>Systems and methods for managing alarm data of multiple locations</span></div>
-        <div class="pat"><span class="yr">2021</span><span>Building security system with alarm lists and alarm rule editing</span></div>
-      </div>
+  <div class="grouplabel">Alarm management and optimisation</div>
+  <div class="item"><div class="num">[P6]</div><div class="bib">
+    <span class="t">Automated Alarm Panel Classification using Pareto Optimization.</span>
+    <span class="au"><b>A. Razak</b>, M. Stewart, G. Subramanian.</span> <span class="v">Granted 2020.</span></div></div>
+  <div class="item"><div class="num">[P5]</div><div class="bib">
+    <span class="t">Systems and methods for managing alarm data of multiple locations.</span>
+    <span class="au"><b>A. Razak</b>, sole inventor.</span> <span class="v">Granted 2021.</span></div></div>
+  <div class="item"><div class="num">[P4]</div><div class="bib">
+    <span class="t">Building security system with alarm lists and alarm rule editing.</span>
+    <span class="au">M. Costello, F. Fala, J. R. Holliday, N. B. Pavel, <b>A. Razak</b>.</span> <span class="v">Granted 2021.</span></div></div>
 
-      <div class="pat-group">
-        <h3>Building security analytics <span>3 patents</span></h3>
-        <div class="pat"><span class="yr">2020</span><span>Building security analysis system with site-independent signature generation for predictive security analysis</span></div>
-        <div class="pat"><span class="yr">2020</span><span>Rules-based method of identifying misuse of emergency fire exits using data generated by a security alarm system</span></div>
-        <div class="pat"><span class="yr">2020</span><span>Systems and Methods for Managing a Security System</span></div>
-      </div>
-
-      <h2>Technical Toolkit</h2>
-      <div class="toolkit">
-        <div><div class="tag-head">Languages &amp; Data</div>
-          <div class="tags">
-            <span class="tag">Python</span><span class="tag">C++ (STL, Boost, Eigen)</span><span class="tag">SQL</span>
-            <span class="tag">PySpark</span><span class="tag">PyFlink</span>
-          </div></div>
-        <div><div class="tag-head">Modelling &amp; Solvers</div>
-          <div class="tags">
-            <span class="tag">PyMC3</span><span class="tag">BLOG</span><span class="tag">Swift PPL</span>
-            <span class="tag">ILOG CPLEX</span><span class="tag">LPSOLVE</span>
-          </div></div>
-        <div><div class="tag-head">Platforms</div>
-          <div class="tags">
-            <span class="tag">AWS SageMaker</span><span class="tag">AWS Athena</span>
-            <span class="tag">Azure Databricks</span><span class="tag">Real-time streaming</span>
-          </div></div>
-        <div><div class="tag-head">Methods</div>
-          <div class="tags">
-            <span class="tag">LLM reasoning</span><span class="tag">Knowledge graphs</span><span class="tag">Multi-modal AI</span>
-            <span class="tag">Bayesian inference</span><span class="tag">Influence diagrams</span><span class="tag">Constraint programming</span>
-          </div></div>
-      </div>
-
-    </div>
-
-    <!-- ---------- rail ---------- -->
-    <div class="rail">
-      <h2>Education</h2>
-
-      <div class="edu">
-        <div class="deg">PhD, Computer Science (Artificial Intelligence)</div>
-        <div class="inst">National University of Ireland, Cork &bull; Cork Constraint Computation Centre</div>
-        <div class="yr">Nov 2010 &ndash; May 2014</div>
-        <div class="thesis">Thesis: Reasoning with Imprecise Trade-offs in Decision Making under Certainty and Uncertainty</div>
-      </div>
-
-      <div class="edu">
-        <div class="deg">MSc, Mathematics with Computer Science</div>
-        <div class="inst">Osmania University, Hyderabad, India</div>
-        <div class="yr">Jun 2003 &ndash; May 2005</div>
-      </div>
-
-      <div class="edu">
-        <div class="deg">BSc, Mathematics, Statistics and Computer Science</div>
-        <div class="inst">Osmania University, Hyderabad, India</div>
-        <div class="yr">Jun 2000 &ndash; Mar 2003</div>
-      </div>
-
-      <h2>Awards &amp; Honours</h2>
-      <ul class="plain">
-        <li><b>IEEE Senior Member</b>, elevated May 2026.</li>
-        <li><b>Science Foundation Ireland Post-Doctoral Fellowship</b>, Insight Centre for Data Analytics, NUI Cork (2014&ndash;2017).</li>
-        <li><b>IRCSET / IBM Enterprise Partnership Scheme scholarship</b>, funding the doctoral programme (2010&ndash;2013).</li>
-        <li><b>Osmania University Merit Scholarship</b> for the MSc programme (2003&ndash;2005).</li>
-        <li><b>Ranked 40th</b> of roughly 30,000 candidates in the Osmania University mathematics entrance test (2003).</li>
-      </ul>
-
-      <h2>Academic Service</h2>
-      <ul class="plain">
-        <li>Reviewer, <b>Computers and Electrical Engineering</b> (Elsevier) &mdash; 10+ manuscripts in AI, wireless networking and intelligent systems.</li>
-        <li>Reviewer, <b>IEEE ICC</b> &mdash; AI submissions for the 2025 technical programme.</li>
-        <li>Invited talks at <b>Sapienza University of Rome</b>, <b>NUI Galway</b>, <b>NUI Cork</b> and <b>IBM Research Labs Dublin</b>.</li>
-        <li>Oral and poster presentations at AAAI, IJCAI, UAI, CP and ICTAI.</li>
-      </ul>
-
-
-      <h2>Profile</h2>
-      <div class="kv"><b>Nationality</b> &mdash; Irish (2021), originally Indian</div>
-      <div class="kv"><b>Languages</b> &mdash; English, Hindi, Telugu, Urdu</div>
-      <div class="kv"><b>Patents</b> &mdash; Justia and Google Patents (inventor: Abdul Razak)</div>
-      <div class="kv"><b>Research</b> &mdash; Google Scholar, DBLP, ORCID, ResearchGate</div>
-      <div class="kv" style="margin-top:4pt">Full detail, with context and links, at
-        <b style="color:var(--accent)">abdulrazakucc.github.io</b>.</div>
-    </div>
+  <div class="grouplabel">Building security analytics</div>
+  <div class="item"><div class="num">[P3]</div><div class="bib">
+    <span class="t">Building security analysis system with site-independent signature generation for predictive security analysis.</span>
+    <span class="au">M. Dziduch, C. J. Donovan, <b>A. Razak</b>.</span> <span class="v">Granted 2020.</span></div></div>
+  <div class="item"><div class="num">[P2]</div><div class="bib">
+    <span class="t">Rules-based method of identifying misuse of emergency fire exits using data generated by a security alarm system.</span>
+    <span class="au">M. Dziduch, C. J. Donovan, <b>A. Razak</b>.</span> <span class="v">Granted 2020.</span></div></div>
+  <div class="item"><div class="num">[P1]</div><div class="bib">
+    <span class="t">Systems and Methods for Managing a Security System.</span>
+    <span class="au">M. Dziduch, C. J. Donovan, <b>A. Razak</b>.</span> <span class="v">Granted 2020.</span></div></div>
   </div>
 
+  <h2>Honours, Fellowships and Funding</h2>
+  <ul class="stack">
+    <li><b>IEEE Senior Member</b>, elevated May 2026.</li>
+    <li><b>Science Foundation Ireland Post-Doctoral Fellowship</b>, Insight Centre for Data Analytics, NUI Cork, 2014&ndash;2017.</li>
+    <li><b>IRCSET / IBM Enterprise Partnership Scheme scholarship</b>, full doctoral funding, NUI Cork, 2010&ndash;2013.</li>
+    <li><b>Osmania University Merit Scholarship</b> (MSc, 2003&ndash;2005); <b>ranked 40th</b> of ~30,000 in the entrance examination.</li>
+  </ul>
+
+  <h2>Academic Service and Invited Talks</h2>
+  <ul class="stack">
+    <li><b>Reviewer</b>, <em>Computers and Electrical Engineering</em> (Elsevier) &mdash; 10+ manuscripts in AI and networking.</li>
+    <li><b>Reviewer</b>, IEEE International Conference on Communications (ICC) &mdash; AI submissions, 2025 technical programme.</li>
+    <li><b>Invited talks</b>: Sapienza University of Rome; NUI Galway; NUI Cork; IBM Research Labs Dublin.</li>
+    <li><b>Conference presentations</b>: oral and poster sessions at AAAI, IJCAI, UAI, CP and ICTAI.</li>
+  </ul>
+
+  <h2>Technical Competencies</h2>
+  <div class="skill"><div class="k">Programming</div><div>Python, C++ (STL, Boost, Eigen), SQL, PySpark, PyFlink</div></div>
+  <div class="skill"><div class="k">Modelling</div><div>PyMC3, BLOG, Swift PPL, ILOG CPLEX, LPSOLVE, scikit-learn</div></div>
+  <div class="skill"><div class="k">Methods</div><div>Bayesian inference, probabilistic graphical models, constraint programming, LLM reasoning</div></div>
+  <div class="skill"><div class="k">Platforms</div><div>AWS SageMaker and Athena, Azure Databricks, real-time streaming and batch pipelines</div></div>
+  <div class="skill"><div class="k">Languages</div><div>English, Hindi, Telugu, Urdu &middot; Irish citizen since 2021</div></div>
+
   <div class="foot">
-    <span>Dr. Abdul Razak &bull; Curriculum Vitae</span>
-    <span>Full portfolio: <a href="https://abdulrazakucc.github.io/">abdulrazakucc.github.io</a> &bull; Page 2 of 2</span>
+    <span>Abdul Razak &middot; Curriculum Vitae</span>
+    <span>Extended detail and project write-ups: <a href="https://abdulrazakucc.github.io/">online portfolio</a> &middot; Page 2 of 2</span>
   </div>
 </section>
 
